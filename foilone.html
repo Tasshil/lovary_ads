@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1530558284759971');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1530558284759971&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta name="facebook-domain-verification" content="tq92ueq9gylq5mf5f5b95tp3k36gc4" />
+
+    <title>Store in your House - فويل ون فاخر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#451916', /* Burgundy from image */
+                        secondary: '#5C4033',
+                        accent: '#8B6F47',
+                        lightAccent: '#A0826D',
+                        dark: '#2D0A08',
+                        gold: '#D4AF37',
+                        lightGold: '#F4D03F',
+                        bg: '#2D0A08',
+                        cream: '#E8E3D9',
+                        darkBg: '#4A3428',
+                        memorial: '#6B4C41',
+                        red: '#ff4444',
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'Segoe UI', 'Tahoma', 'sans-serif'],
+                        brush: ['Brush Script MT', 'cursive'],
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 1s ease',
+                        fadeInDown: 'fadeInDown 1s ease',
+                        fadeInUp: 'fadeInUp 1s ease 0.3s both',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            'from': { opacity: '0' },
+                            'to': { opacity: '1' },
+                        },
+                        fadeInDown: {
+                            'from': { opacity: '0', transform: 'translateY(-30px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInUp: {
+                            'from': { opacity: '0', transform: 'translateY(30px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2D0A08;
+            color: #FFFAE8;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/rid.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .price-text {
+            color: #F4D03F;
+            text-shadow: 0 2px 10px rgba(244, 208, 63, 0.3);
+        }
+
+        .fade-image {
+            transition: opacity 0.9s ease-in-out;
+        }
+
+        .glow-text {
+            color: #FFFAE8;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+            }
+
+            to {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 1), 0 0 30px rgba(212, 175, 55, 0.6);
+            }
+        }
+
+        /* Promotional Badge */
+        .promo-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E4C1 100%);
+            color: #3D2817;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+            z-index: 20;
+            max-width: 250px;
+            border: 2px solid #8B6F47;
+            animation: gentlePulse 3s infinite;
+            transform: translateY(-50%);
+        }
+
+        .promo-badge h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #3D2817;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .promo-badge p {
+            font-size: 13px;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            color: #3D2817;
+        }
+
+        .promo-badge .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #8B6F47;
+            margin-top: 8px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        @keyframes gentlePulse {
+
+            0%,
+            100% {
+                transform: translateY(-50%) scale(1);
+                box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+            }
+
+            50% {
+                transform: translateY(-50%) scale(1.03);
+                box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .promo-badge {
+                position: static;
+                transform: none;
+                margin-bottom: 20px;
+                max-width: 100%;
+                animation: none;
+            }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            animation: bounce 2s infinite;
+            text-decoration: none;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Special Offer Modal */
+        .offer-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .offer-modal.active {
+            display: flex;
+        }
+
+        .offer-modal-content {
+            background: #F5F0E8;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 24px;
+            padding: 32px 28px;
+            position: relative;
+            color: #451916;
+            box-shadow: 0 20px 80px rgba(139, 111, 71, 0.4);
+            border: 3px solid #8B6F47;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .offer-modal-content h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #451916;
+        }
+
+        .offer-modal-close {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            font-size: 26px;
+            cursor: pointer;
+            color: #8B6F47;
+            line-height: 1;
+        }
+
+        .offer-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #C9CCD3;
+            border-radius: 12px;
+            font-size: 15px;
+            color: #451916;
+            background: white;
+            margin-bottom: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .offer-input:focus {
+            border-color: #8B6F47;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+    </style>
+</head>
+
+<body class="font-sans overflow-x-hidden min-h-screen">
+
+    <!-- Branding Header -->
+    <header class="w-full py-6 text-center bg-[#CEC4B9]">
+        <div class="text-4xl md:text-5xl font-brush text-[#451916] drop-shadow-sm">
+            Store in your house
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-5 py-10">
+        <!-- Product Image & Price -->
+        <div class="flex flex-col items-center mb-16">
+            <h1 class="glow-text text-2xl md:text-3xl font-black text-center mb-8 px-4 leading-relaxed">
+                فرح أمك أو أبوك بشهادة ذهبية
+            </h1>
+            <div class="mb-10 relative flex items-center justify-center">
+                <img id="productSlider" src="images/dds.jpg" alt="Foil One"
+                    class="w-full max-w-sm h-auto drop-shadow-2xl fade-image">
+            </div>
+
+            <div class="price-text text-5xl md:text-6xl font-black mb-6">
+                2900 دج
+            </div>
+            <a href="#order"
+                class="px-8 py-3 bg-gold text-dark rounded-xl font-bold shadow-lg hover:scale-105 transition-transform text-lg no-underline mb-12">
+                اطلب الآن ✓
+            </a>
+
+            <!-- Two Product Cards -->
+            <div class="grid grid-cols-2 gap-4 w-full mt-12">
+                <div class="bg-black/30 border border-gold/30 rounded-2xl p-2 flex flex-col items-center">
+                    <img src="images/goo.jpg" alt="Gold Edition"
+                        class="w-full h-48 object-contain drop-shadow-lg rounded-xl mb-2">
+                    <span class="text-sm font-bold text-gold"> ذهبي</span>
+                </div>
+                <div class="bg-black/30 border border-gold/30 rounded-2xl p-2 flex flex-col items-center">
+                    <img src="images/dds.jpg" alt="Black Edition"
+                        class="w-full h-48 object-contain drop-shadow-lg rounded-xl mb-2">
+                    <span class="text-sm font-bold text-gold"> أسود بلمسة ذهبية</span>
+                </div>
+            </div>
+
+
+
+            <!-- Real Product Images Section -->
+            <div class="w-full mt-16 mb-20 text-center">
+                <h2 class="glow-text text-2xl font-black mb-8">صور حقيقية للمنتج</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-black/20 p-1 rounded-2xl border border-gold/20 shadow-xl">
+                        <img src="images/oneb.jpg" alt="Real Image 2"
+                            class="w-full h-auto rounded-xl object-cover hover:scale-[1.05] transition-transform duration-500">
+                    </div>
+                    <div class="bg-black/20 p-1 rounded-2xl border border-gold/20 shadow-xl">
+                        <img src="images/onee.jpg" alt="Real Image 3"
+                            class="w-full h-auto rounded-xl object-cover hover:scale-[1.05] transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Form Section -->
+        <section id="order"
+            class="order-section py-24 px-5 bg-gradient-to-br from-secondary to-darkBg relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(160,130,109,0.08)_0%,transparent_50%)] pointer-events-none">
+            </div>
+
+            <div
+                class="order-container max-w-3xl mx-auto bg-cream p-8 md:p-12 rounded-3xl shadow-[0_25px_100px_rgba(0,0,0,0.3)] relative z-10 border-[3px] border-[rgba(139,111,71,0.2)]">
+
+                <!-- Promotional Badge -->
+                <div class="promo-badge" onclick="openFoilOfferModal()" style="cursor: pointer;">
+                    <h3>🎁 عرض خاص</h3>
+                    <p>خذ شهادتين واستفد من خصم <strong>1000 دج</strong></p>
+                    <div class="price">4000 دج لشهادتين</div>
+                </div>
+
+                <h2
+                    class="section-title text-center text-4xl text-primary mb-8 relative inline-block w-full after:content-[''] after:block after:w-32 after:h-1 after:bg-gradient-to-r after:from-transparent after:via-accent after:to-transparent after:mx-auto after:mt-4 after:rounded-sm">
+                    اطلب شهادتك الآن</h2>
+
+                <form id="orderForm">
+                    <div class="form-group mb-6">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">رقم الهاتف *</label>
+                        <input type="tel" id="phone" required placeholder="مثال: 0555123456" maxlength="10"
+                            pattern="[0-9]{10}"
+                            class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                        <small class="text-memorial text-sm mt-1 block">يجب أن يكون 10 أرقام</small>
+                    </div>
+
+                    <div class="form-group mb-6">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">اختر نوع اللوحة *</label>
+                        <div class="plaque-type-options grid grid-cols-3 gap-4">
+                            <div class="plaque-type-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
+                                data-type="mom">
+                                أمي
+                            </div>
+                            <div class="plaque-type-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
+                                data-type="dad">
+                                أبي
+                            </div>
+                            <div class="plaque-type-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
+                                data-type="custom">
+                                تخصيص
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Info Fields -->
+                    <div id="personalFields" class="hidden">
+                        <!-- Relationship Field (Only for custom type) -->
+                        <div class="form-group mb-6" id="relationshipField" style="display: none;">
+                            <label class="block mb-2.5 text-lg text-primary font-semibold">قرابة الشخص *</label>
+                            <input type="text" id="relationship" placeholder="مثال: أخ / أخت / صديق"
+                                class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label class="block mb-2.5 text-lg text-primary font-semibold">اسمك *</label>
+                            <input type="text" id="yourName" placeholder="أدخل اسمك"
+                                class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label id="plaqueOwnerLabel" class="block mb-2.5 text-lg text-primary font-semibold">اسم
+                                صاحب اللوحة *</label>
+                            <input type="text" id="plaqueOwnerName" placeholder="أدخل اسم صاحب اللوحة"
+                                class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label class="block mb-2.5 text-lg text-primary font-semibold">تاريخ الميلاد
+                                (اختياري)</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div>
+                                    <input type="number" id="birthDay" placeholder="اليوم" min="1" max="31"
+                                        class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                                </div>
+                                <div>
+                                    <select id="birthMonth"
+                                        class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                                        <option value="">الشهر</option>
+                                        <option value="1">جانفي</option>
+                                        <option value="2">فيفري</option>
+                                        <option value="3">مارس</option>
+                                        <option value="4">أفريل</option>
+                                        <option value="5">ماي</option>
+                                        <option value="6">جوان</option>
+                                        <option value="7">جويلية</option>
+                                        <option value="8">أوت</option>
+                                        <option value="9">سبتمبر</option>
+                                        <option value="10">أكتوبر</option>
+                                        <option value="11">نوفمبر</option>
+                                        <option value="12">ديسمبر</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="number" id="birthYear" placeholder="السنة" min="1900" max="2100"
+                                        class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-6">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">اختر التصميم *</label>
+                        <div class="design-options grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="design-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
+                                data-design="gold" data-price="2500">
+                                الذهبي<br>2500 دج
+                            </div>
+                            <div class="design-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
+                                data-design="black" data-price="2500">
+                                الأسود<br>2500 دج
+                            </div>
+                            <div class="design-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
+                                data-design="white" data-price="2500">
+                                الأبيض<br>2500 دج
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Type Selection -->
+                    <div class="form-group mb-6">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">نوع التوصيل *</label>
+                        <div class="delivery-options grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label
+                                class="delivery-option selected p-6 border-[3px] border-accent rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-gradient-to-br from-cream to-white text-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)]">
+                                <input type="radio" name="delivery" value="desk" checked style="display: none;">
+                                🏢 توصيل للمكتب/نقطة استلام
+                            </label>
+                            <label
+                                class="delivery-option p-6 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)]">
+                                <input type="radio" name="delivery" value="home" style="display: none;">
+                                🏠 توصيل للمنزل
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Wilaya Selection -->
+                    <div class="form-group mb-6">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">الولاية *</label>
+                        <select id="wilaya-select" required
+                            class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                            <option value="">اختر الولاية</option>
+                        </select>
+                    </div>
+
+                    <!-- Baladiya -->
+                    <div class="form-group mb-6" id="baladiya-group" style="display: none;">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">البلدية *</label>
+                        <select id="baladiya-select"
+                            class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                            <option value="">اختر البلدية</option>
+                        </select>
+                    </div>
+
+                    <!-- Hub -->
+                    <div class="form-group mb-6" id="hub-group">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">المكتب المتوفر *</label>
+                        <select id="hub-select" required
+                            class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                            <option value="">اختر المكتب</option>
+                        </select>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group mb-6" id="address-group" style="display: none;">
+                        <label class="block mb-2.5 text-lg text-primary font-semibold">العنوان التفصيلي *</label>
+                        <input type="text" id="address" placeholder="الحي، رقم المنزل..."
+                            class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-primary focus:outline-none focus:border-accent focus:shadow-[0_0_0_4px_rgba(139,111,71,0.15)]">
+                    </div>
+
+                    <button type="submit"
+                        class="submit-btn w-full p-6 text-2xl bg-gradient-to-br from-accent to-lightAccent text-white border-none rounded-2xl cursor-pointer font-bold mt-8 transition-all duration-400 shadow-[0_12px_35px_rgba(139,111,71,0.4)] hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(139,111,71,0.6)]">✓
+                        تأكيد الطلب</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="py-10 text-center opacity-70 text-sm">
+        © 2025 Store in your House - جميع الحقوق محفوظة
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="data.js"></script>
+
+    <script>
+        // Use the same Firebase config
+        const foilFirebaseConfig = {
+            apiKey: "AIzaSyAm1I7Pqa8P2tF7_IybK5ixMu716dvwe_k",
+            authDomain: "store-in-your-house.firebaseapp.com",
+            projectId: "store-in-your-house",
+            storageBucket: "store-in-your-house.firebasestorage.app",
+            messagingSenderId: "956809132628",
+            appId: "1:956809132628:web:125ab01b2aff641e9fcbc1"
+        };
+
+        // Safe initialization
+        let foilDb;
+        if (!firebase.apps.length) {
+            firebase.initializeApp(foilFirebaseConfig);
+        }
+        foilDb = firebase.firestore();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.appData || !window.appData.wilayas) {
+                console.error('AppData not loaded. Make sure data.js is included.');
+                return;
+            }
+
+            const wilayaSelect = document.getElementById('wilaya-select');
+            const baladiyaSelect = document.getElementById('baladiya-select');
+            const hubSelect = document.getElementById('hub-select');
+            const baladiyaGroup = document.getElementById('baladiya-group');
+            const hubGroup = document.getElementById('hub-group');
+            const addressGroup = document.getElementById('address-group');
+            const deliveryRadios = document.getElementsByName('delivery');
+
+            // Populate Wilayas
+            window.appData.wilayas.forEach(w => {
+                const opt = document.createElement('option');
+                opt.value = w.code;
+                opt.textContent = `${w.code} - ${w.name}`;
+                wilayaSelect.appendChild(opt);
+            });
+
+            // Update form state based on delivery type
+            function updateFormState() {
+                const selectedRadio = document.querySelector('input[name="delivery"]:checked');
+                if (!selectedRadio) return;
+                const selectedType = selectedRadio.value;
+                if (selectedType === 'desk') {
+                    baladiyaGroup.style.display = 'none';
+                    addressGroup.style.display = 'none';
+                    hubGroup.style.display = 'block';
+                    document.getElementById('address').required = false;
+                    baladiyaSelect.required = false;
+                    hubSelect.required = true;
+                } else {
+                    hubGroup.style.display = 'none';
+                    baladiyaGroup.style.display = 'block';
+                    addressGroup.style.display = 'block';
+                    hubSelect.required = false;
+                    document.getElementById('address').required = true;
+                    baladiyaSelect.required = true;
+                }
+            }
+
+            // Handle Wilaya Change
+            function handleWilayaChange() {
+                const wilayaCode = wilayaSelect.value;
+                const selectedRadio = document.querySelector('input[name="delivery"]:checked');
+                const selectedType = selectedRadio ? selectedRadio.value : 'desk';
+                if (!wilayaCode) return;
+                if (selectedType === 'desk') {
+                    hubSelect.innerHTML = '<option value="">اختر المكتب</option>';
+                    const hubs = window.appData.hubs.filter(h => h.wilayaCode === wilayaCode);
+                    hubs.forEach(h => {
+                        const opt = document.createElement('option');
+                        opt.value = h.nameEn;
+                        opt.textContent = h.nameAr;
+                        hubSelect.appendChild(opt);
+                    });
+                } else {
+                    baladiyaSelect.innerHTML = '<option value="">اختر البلدية</option>';
+                    const communes = window.appData.communes[wilayaCode] || [];
+                    communes.forEach(c => {
+                        const opt = document.createElement('option');
+                        opt.value = c;
+                        opt.textContent = c;
+                        baladiyaSelect.appendChild(opt);
+                    });
+                }
+            }
+
+            // Events
+            deliveryRadios.forEach(r => r.addEventListener('change', updateFormState));
+            wilayaSelect.addEventListener('change', handleWilayaChange);
+            deliveryRadios.forEach(r => r.addEventListener('change', () => {
+                if (wilayaSelect.value) handleWilayaChange();
+            }));
+
+            // Styling click for delivery options
+            const deliveryOptionsLabels = document.querySelectorAll('.delivery-option');
+            deliveryOptionsLabels.forEach(option => {
+                option.addEventListener('click', () => {
+                    deliveryOptionsLabels.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    const radio = option.querySelector('input[type="radio"]');
+                    if (radio) {
+                        radio.checked = true;
+                        updateFormState();
+                        if (wilayaSelect.value) handleWilayaChange();
+                    }
+                });
+            });
+
+            // Design selection
+            let selectedDesign = null;
+            let productPrice = 0;
+            document.querySelectorAll('.design-option').forEach(option => {
+                option.addEventListener('click', function () {
+                    document.querySelectorAll('.design-option').forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedDesign = this.dataset.design;
+                    productPrice = parseInt(this.dataset.price);
+                });
+            });
+
+            // Plaque type selection
+            let selectedPlaqueType = null;
+            document.querySelectorAll('.plaque-type-option').forEach(option => {
+                option.addEventListener('click', function () {
+                    document.querySelectorAll('.plaque-type-option').forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedPlaqueType = this.dataset.type;
+                    const personalFields = document.getElementById('personalFields');
+                    const relationshipField = document.getElementById('relationshipField');
+                    personalFields.classList.remove('hidden');
+                    document.getElementById('yourName').required = true;
+                    document.getElementById('plaqueOwnerName').required = true;
+                    const plaqueOwnerLabel = document.getElementById('plaqueOwnerLabel');
+                    const plaqueOwnerInput = document.getElementById('plaqueOwnerName');
+                    if (selectedPlaqueType === 'mom') {
+                        plaqueOwnerLabel.textContent = 'اسم الأم *';
+                        plaqueOwnerInput.placeholder = 'أدخل اسم الأم';
+                    } else if (selectedPlaqueType === 'dad') {
+                        plaqueOwnerLabel.textContent = 'اسم الأب *';
+                        plaqueOwnerInput.placeholder = 'أدخل اسم الأب';
+                    } else {
+                        plaqueOwnerLabel.textContent = 'اسم صاحب اللوحة *';
+                        plaqueOwnerInput.placeholder = 'أدخل اسم صاحب اللوحة';
+                    }
+                    if (selectedPlaqueType === 'custom') {
+                        relationshipField.style.display = 'block';
+                        document.getElementById('relationship').required = true;
+                    } else {
+                        relationshipField.style.display = 'none';
+                        document.getElementById('relationship').required = false;
+                    }
+                });
+            });
+
+            // Init
+            updateFormState();
+
+            // Form submission
+            document.getElementById('orderForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const btn = this.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري الطلب...';
+                btn.disabled = true;
+
+                const selectedPlaqueTypeOption = document.querySelector('.plaque-type-option.selected');
+                const selectedPlaqueType = selectedPlaqueTypeOption ? selectedPlaqueTypeOption.dataset.type : null;
+                if (!selectedPlaqueType) {
+                    alert('الرجاء اختيار نوع اللوحة');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    return;
+                }
+
+                const selectedDesignOption = document.querySelector('.design-option.selected');
+                const selectedDesign = selectedDesignOption ? selectedDesignOption.dataset.design : null;
+                const productPrice = selectedDesignOption ? parseInt(selectedDesignOption.dataset.price) : 2500;
+                if (!selectedDesign) {
+                    alert('الرجاء اختيار التصميم');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    return;
+                }
+
+                let phone = document.getElementById('phone').value.trim();
+                phone = phone.replace(/\D/g, '');
+                const formattedPhone = phone.startsWith('0') ? phone.replace(/^0/, '+213') : '+213' + phone;
+
+                const selectedRadio = document.querySelector('input[name="delivery"]:checked');
+                const deliveryType = selectedRadio ? selectedRadio.value : 'desk';
+                const wilaya = wilayaSelect.options[wilayaSelect.selectedIndex]?.text || '';
+                const baladiya = deliveryType === 'home' ? document.getElementById('baladiya-select').value : '';
+                const hub = deliveryType === 'desk' ? document.getElementById('hub-select').value : '';
+                const address = deliveryType === 'home' ? document.getElementById('address').value.trim() : hub;
+
+                let yourName = document.getElementById('yourName').value.trim();
+                let plaqueOwnerName = document.getElementById('plaqueOwnerName').value.trim();
+
+                const birthDay = document.getElementById('birthDay').value.trim();
+                const birthMonth = document.getElementById('birthMonth').value.trim();
+                const birthYear = document.getElementById('birthYear').value.trim();
+                let birthDate = '';
+                if (birthDay || birthMonth || birthYear) {
+                    birthDate = `${birthDay}/${birthMonth}/${birthYear}`;
+                }
+
+                let relationship = '';
+                if (selectedPlaqueType === 'custom') {
+                    relationship = document.getElementById('relationship').value.trim();
+                } else {
+                    if (!plaqueOwnerName) {
+                        plaqueOwnerName = selectedPlaqueType === 'mom' ? 'أمي' : 'أبي';
+                    }
+                }
+
+                const designArabic = selectedDesign === 'gold' ? 'الذهبي' : selectedDesign === 'black' ? 'الأسود' : 'الأبيض';
+                const deliveryArabic = deliveryType === 'home' ? 'منزل' : 'مكتب';
+                const plaqueTypeArabic = selectedPlaqueType === 'mom' ? 'أمي' : selectedPlaqueType === 'dad' ? 'أبي' : 'تخصيص';
+
+                const formData = {
+                    name: yourName || plaqueOwnerName,
+                    phone: formattedPhone,
+                    delivery: deliveryType === 'desk' ? 'OUI' : 'NON',
+                    wilaya: wilaya, baladiya: baladiya, hub: hub, address: address,
+                    price: productPrice, shipping: 0, total: productPrice,
+                    color: designArabic, quantity: birthDate,
+                    product: `${plaqueTypeArabic} - ${designArabic}`,
+                    status: 'قيد المعالجة', shipping_status: 'لم يرسل',
+                    source: 'صفحة اللوحة التذكارية',
+                    plaqueType: plaqueTypeArabic, plaqueOwnerName: plaqueOwnerName,
+                    birthDate: birthDate, relationship: relationship
+                };
+
+                const firestoreData = {
+                    customerName: yourName || plaqueOwnerName,
+                    phoneNumber: formattedPhone,
+                    deliveryType: deliveryType === 'desk' ? 'OUI' : 'NON',
+                    wilaya: wilaya, baladiya: baladiya, hub: hub, address: address,
+                    price: productPrice, shippingPrice: 0, total: productPrice,
+                    color: designArabic, quantity: 1,
+                    productName: `${plaqueTypeArabic} - ${designArabic}`,
+                    status: 'new', deliveryStatus: 'لم يجهز',
+                    source: 'صفحة اللوحة التذكارية (Foil)',
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    customFieldL: birthDate, customFieldM: deliveryArabic,
+                    customFieldK: relationship,
+                    plaqueType: plaqueTypeArabic, plaqueOwnerName: plaqueOwnerName
+                };
+
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJ3sM27Dz25VwQyM-QldYPbv4-_y5wrX4kZcIYrSAdSSOJ6r0DsvfFqQ5K2Mkcthe9/exec';
+                const firestorePromise = foilDb.collection('mom_foil').add(firestoreData);
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST', mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                }).then(() => console.log('Sent to Google Sheet')).catch(err => console.error('Error sending to sheet', err));
+
+                firestorePromise.then(() => console.log('Order saved to Firestore successfully')).catch(err => console.error('Error saving to Firestore', err));
+
+                setTimeout(() => {
+                    const message = `
+🕊️ *طلب جديد - لوحة تذكارية* 🕊️
+---------------------------
+👤 *اسمك:* ${yourName}
+📱 *الهاتف:* ${formattedPhone}
+🎨 *نوع اللوحة:* ${plaqueTypeArabic}
+✏️ *اسم صاحب اللوحة:* ${plaqueOwnerName}
+${birthDate ? `📅 *تاريخ الميلاد:* ${birthDate}` : ''}
+${relationship ? `👥 *قرابة الشخص:* ${relationship}` : ''}
+🎨 *التصميم:* ${designArabic}
+---------------------------
+🚚 *التوصيل:* ${deliveryArabic}
+📍 *الولاية:* ${wilaya}
+${baladiya ? `🏘️ *البلدية:* ${baladiya}` : ''}
+${hub ? `🏢 *المكتب:* ${hub}` : ''}
+${address ? `🏠 *العنوان:* ${address}` : ''}
+---------------------------
+💰 *السعر:* ${productPrice} د.ج`;
+
+                    const whatsappNumber = "213777406864";
+                    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message.trim())}`;
+                    window.open(url, '_blank');
+
+                    const successHTML = `
+                    <div id="successOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(28,40,51,0.95);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;">
+                        <div style="background:#ECF0F1;max-width:500px;width:100%;border-radius:30px;padding:40px 30px;text-align:center;box-shadow:0 20px 80px rgba(139,111,71,0.4);border:3px solid #8B6F47;animation:fadeIn 0.6s ease;">
+                            <div style="font-size:80px;margin-bottom:20px;">✨</div>
+                            <h2 style="font-size:28px;color:#5C4033;margin-bottom:15px;font-weight:bold;">تم استلام طلبك بنجاح!</h2>
+                            <p style="font-size:18px;color:#5C4033;line-height:1.8;margin-bottom:25px;">
+                                شكراً لثقتك فينا ❤️<br>
+                                تم حفظ طلبك وسنتصل بك في أقرب وقت ممكن لتأكيد التفاصيل وإتمام الطلب إن شاء الله.
+                            </p>
+                            <div style="background:#25D366;color:white;padding:15px 30px;border-radius:50px;font-size:18px;font-weight:bold;display:inline-block;margin:10px;">
+                                تم إرسال الطلب عبر الواتساب
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    document.body.insertAdjacentHTML('beforeend', successHTML);
+                    setTimeout(() => { const o = document.getElementById('successOverlay'); if (o) o.remove(); }, 5000);
+                }, 500);
+            });
+        });
+
+        // Image slider (static logic for matching the other page)
+        const sliderImg = document.getElementById('productSlider');
+        const images = ['images/dds.jpg', 'images/bbs.png'];
+        let currentIdx = 0;
+        setInterval(() => {
+            if (sliderImg) {
+                sliderImg.style.opacity = 0;
+                setTimeout(() => {
+                    currentIdx = (currentIdx + 1) % images.length;
+                    sliderImg.src = images[currentIdx];
+                    sliderImg.style.opacity = 1;
+                }, 300);
+            }
+        }, 3000);
+    </script>
+
+    <!-- Special Offer Modal Form -->
+    <div id="foilOfferModal" class="offer-modal">
+        <div class="offer-modal-content">
+            <span class="offer-modal-close" onclick="closeFoilOfferModal()">&times;</span>
+            <h2>عرض خاص - شهادتين</h2>
+            <form id="foilOfferForm">
+                <div class="form-row full">
+                    <input type="text" id="foilOfferYourName" placeholder="اسمك *" required
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                </div>
+
+                <div class="form-row">
+                    <input type="text" id="foilOfferMomName" placeholder="اسم الأم *" required
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                    <input type="text" id="foilOfferDadName" placeholder="اسم الأب *" required
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                </div>
+
+                <div class="form-row">
+                    <input type="text" id="foilOfferMomBirth" placeholder="تاريخ ميلاد الأم (مثال: 1999/12/11)"
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                    <input type="text" id="foilOfferDadBirth" placeholder="تاريخ ميلاد الأب (مثال: 1999/12/11)"
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                </div>
+
+                <div class="form-row">
+                    <select id="foilOfferMomDesign" required
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                        <option value="">تصميم الأم *</option>
+                        <option value="gold">الذهبي</option>
+                        <option value="black">الأسود</option>
+                        <option value="white">الأبيض</option>
+                    </select>
+                    <select id="foilOfferDadDesign" required
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                        <option value="">تصميم الأب *</option>
+                        <option value="gold">الذهبي</option>
+                        <option value="black">الأسود</option>
+                        <option value="white">الأبيض</option>
+                    </select>
+                </div>
+
+                <div class="form-row full">
+                    <input type="tel" id="foilOfferPhone" placeholder="رقم الهاتف *" required pattern="[0-9]{10}"
+                        maxlength="10"
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                </div>
+
+                <div class="form-row">
+                    <select id="foilOfferWilaya" required onchange="handleFoilOfferWilayaChange()"
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                        <option value="">اختر الولاية *</option>
+                    </select>
+                    <div id="foilOfferBaladiyaContainer" style="display:none;" class="w-full">
+                        <select id="foilOfferBaladiya"
+                            class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                            <option value="">البلدية</option>
+                        </select>
+                    </div>
+                    <div id="foilOfferHubContainer" style="display:none;" class="w-full">
+                        <select id="foilOfferHub"
+                            class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                            <option value="">نقطة الاستلام</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="foilOfferAddressContainer" style="display:none;" class="form-row full mt-2">
+                    <input type="text" id="foilOfferAddress" placeholder="العنوان بالتفصيل *"
+                        class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
+                </div>
+
+                <div class="form-row full">
+                    <div class="flex gap-4 justify-center mb-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="foilOfferDelivery" value="desk" checked
+                                onchange="toggleFoilOfferDelivery()">
+                            <span class="text-primary font-semibold">مكتب</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="radio" name="foilOfferDelivery" value="home"
+                                onchange="toggleFoilOfferDelivery()">
+                            <span class="text-primary font-semibold">منزل</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" id="foilOfferSubmitBtn"
+                    class="w-full bg-gradient-to-br from-accent to-lightAccent text-white font-bold py-4 rounded-xl text-xl shadow-lg transform transition hover:-translate-y-1 hover:shadow-2xl">
+                    تأكيد الطلب - 4000 دج
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Special Offer Modal
+        function openFoilOfferModal() {
+            document.getElementById('foilOfferModal').classList.add('active');
+            populateFoilOfferWilayas();
+        }
+        function closeFoilOfferModal() {
+            document.getElementById('foilOfferModal').classList.remove('active');
+        }
+        document.getElementById('foilOfferModal').addEventListener('click', function (e) {
+            if (e.target === this) closeFoilOfferModal();
+        });
+
+        function toggleFoilOfferDelivery() {
+            handleFoilOfferWilayaChange();
+        }
+
+        function populateFoilOfferWilayas() {
+            const select = document.getElementById('foilOfferWilaya');
+            if (select.options.length > 1) return;
+            if (window.appData && window.appData.wilayas) {
+                window.appData.wilayas.forEach((wilaya) => {
+                    const option = document.createElement('option');
+                    option.value = wilaya.code;
+                    option.textContent = `${wilaya.code} - ${wilaya.name}`;
+                    select.appendChild(option);
+                });
+            }
+        }
+
+        function handleFoilOfferWilayaChange() {
+            const wilayaId = document.getElementById('foilOfferWilaya').value;
+            const deliveryType = document.querySelector('input[name="foilOfferDelivery"]:checked').value;
+            const baladiyaContainer = document.getElementById('foilOfferBaladiyaContainer');
+            const hubContainer = document.getElementById('foilOfferHubContainer');
+            const addressContainer = document.getElementById('foilOfferAddressContainer');
+            const addressInput = document.getElementById('foilOfferAddress');
+
+            if (!wilayaId) {
+                baladiyaContainer.style.display = 'none';
+                hubContainer.style.display = 'none';
+                addressContainer.style.display = 'none';
+                return;
+            }
+
+            if (deliveryType === 'home') {
+                hubContainer.style.display = 'none';
+                baladiyaContainer.style.display = 'block';
+                addressContainer.style.display = 'block';
+                addressInput.required = true;
+
+                const baladiyaSelect = document.getElementById('foilOfferBaladiya');
+                baladiyaSelect.innerHTML = '<option value="">اختر البلدية</option>';
+
+                if (window.appData && window.appData.communes && window.appData.communes[wilayaId]) {
+                    window.appData.communes[wilayaId].forEach(baladiya => {
+                        const option = document.createElement('option');
+                        option.value = baladiya;
+                        option.textContent = baladiya;
+                        baladiyaSelect.appendChild(option);
+                    });
+                }
+            } else {
+                baladiyaContainer.style.display = 'none';
+                addressContainer.style.display = 'none';
+                addressInput.required = false;
+                hubContainer.style.display = 'block';
+
+                const hubSelect = document.getElementById('foilOfferHub');
+                hubSelect.innerHTML = '<option value="">اختر نقطة الاستلام</option>';
+
+                if (window.appData && window.appData.hubs) {
+                    const hubs = window.appData.hubs.filter(h => h.wilayaCode == wilayaId);
+                    hubs.forEach(hub => {
+                        const option = document.createElement('option');
+                        option.textContent = hub.nameAr ? hub.nameAr : (hub.hub_name || 'مكتب ' + wilayaId);
+                        option.value = hub.nameAr ? hub.nameAr : hub.hub_name;
+                        hubSelect.appendChild(option);
+                    });
+                }
+            }
+        }
+
+        document.getElementById('foilOfferForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('foilOfferSubmitBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري الطلب...';
+            btn.disabled = true;
+
+            const name = document.getElementById('foilOfferYourName').value;
+            const momName = document.getElementById('foilOfferMomName').value;
+            const dadName = document.getElementById('foilOfferDadName').value;
+            const momBirth = document.getElementById('foilOfferMomBirth').value;
+            const dadBirth = document.getElementById('foilOfferDadBirth').value;
+            const momDesign = document.getElementById('foilOfferMomDesign').value;
+            const dadDesign = document.getElementById('foilOfferDadDesign').value;
+            const phone = document.getElementById('foilOfferPhone').value;
+            const wilayaEl = document.getElementById('foilOfferWilaya');
+            const wilayaId = wilayaEl.value;
+            const wilaya = wilayaEl.options[wilayaEl.selectedIndex].text;
+            const deliveryType = document.querySelector('input[name="foilOfferDelivery"]:checked').value;
+            const baladiya = deliveryType === 'home' ? document.getElementById('foilOfferBaladiya').value : '';
+            const hub = deliveryType === 'desk' ? document.getElementById('foilOfferHub').value : '';
+            const address = deliveryType === 'home' ? document.getElementById('foilOfferAddress').value : hub;
+
+            const momDesignAr = momDesign === 'gold' ? 'الذهبي' : (momDesign === 'black' ? 'الأسود' : 'الأبيض');
+            const dadDesignAr = dadDesign === 'gold' ? 'الذهبي' : (dadDesign === 'black' ? 'الأسود' : 'الأبيض');
+
+            const formData = {
+                name: name,
+                phone: phone.startsWith('0') ? phone.replace(/^0/, '+213') : '+213' + phone,
+                delivery: deliveryType === 'desk' ? 'OUI' : 'NON',
+                wilaya: wilaya, baladiya: baladiya, hub: hub, address: address,
+                price: 4000, total: 4000,
+                color: `الأم: ${momDesignAr} | الأب: ${dadDesignAr}`,
+                quantity: `الأم: ${momBirth} | الأب: ${dadBirth}`,
+                product: `عرض شهادتين - أمي (${momName}) وأبي (${dadName})`,
+                status: 'قيد المعالجة', shipping_status: 'لم يرسل',
+                source: 'عرض 4000 دج',
+                plaqueType: 'عرض خاص',
+                plaqueOwnerName: `الأم: ${momName} | الأب: ${dadName}`,
+                birthDate: `الأم: ${momBirth} | الأب: ${dadBirth}`,
+                relationship: 'عرض خاص (أمي وأبي)'
+            };
+
+            const FOIL_GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJ3sM27Dz25VwQyM-QldYPbv4-_y5wrX4kZcIYrSAdSSOJ6r0DsvfFqQ5K2Mkcthe9/exec';
+            fetch(FOIL_GOOGLE_SCRIPT_URL, {
+                method: 'POST', mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            }).then(() => console.log('Offer sent to Google Sheet')).catch(err => console.error(err));
+
+            const firestoreData = {
+                customerName: name,
+                phoneNumber: formData.phone,
+                deliveryType: formData.delivery,
+                wilaya: wilaya, baladiya: baladiya, hub: hub, address: address,
+                price: 4000, total: 4000,
+                color: formData.color, quantity: 1,
+                productName: formData.product,
+                status: 'new', deliveryStatus: 'لم يجهز',
+                source: 'عرض 4000 دج (Foil)',
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                customFieldL: formData.quantity,
+                customFieldM: deliveryType === 'home' ? 'منزل' : 'مكتب',
+                plaqueType: 'عرض خاص',
+                plaqueOwnerName: `الأم: ${momName} | الأب: ${dadName}`
+            };
+
+            foilDb.collection('mom_foil').add(firestoreData).then(() => {
+                alert('تم استلام طلبكم للعرض الخاص بنجاح! سنتواصل معكم قريباً.');
+                closeFoilOfferModal();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                document.getElementById('foilOfferForm').reset();
+            }).catch(err => {
+                console.error(err);
+                alert('حدث خطأ أثناء حفظ الطلب في قاعدة البيانات');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
+        });
+    </script>
+
+    <a href="https://wa.me/213555123456" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-8 h-8">
+    </a>
+</body>
+
+</html>
