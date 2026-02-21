@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -27,10 +26,10 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=939027478454511&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
-    
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1530558284759971&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
     <meta name="facebook-domain-verification" content="xdienmepcs2jv8q2diqnw8btdn7kke" />
-
-
 
     <title>لوحة تذكارية فاخرة - تخليد الذكريات بأناقة</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -689,10 +688,29 @@
         </svg>
     </a>
 
+    <!-- Firebase SDK (Compat Version) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
     <!-- Load Data.js for Wilayas, Communes, and Hubs -->
     <script src="data.js"></script>
 
     <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAm1I7Pqa8P2tF7_IybK5ixMu716dvwe_k",
+            authDomain: "store-in-your-house.firebaseapp.com",
+            projectId: "store-in-your-house",
+            storageBucket: "store-in-your-house.firebasestorage.app",
+            messagingSenderId: "956809132628",
+            appId: "1:956809132628:web:125ab01b2aff641e9fcbc1"
+        };
+
+        // Initialize Firebase
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        const db = firebase.firestore();
         // Google Sheets Configuration
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJ3sM27Dz25VwQyM-QldYPbv4-_y5wrX4kZcIYrSAdSSOJ6r0DsvfFqQ5K2Mkcthe9/exec';
 
@@ -901,7 +919,7 @@
                 const wilaya = wilayaSelect.options[wilayaSelect.selectedIndex]?.text || '';
                 const baladiya = deliveryType === 'home' ? document.getElementById('baladiya-select').value : '';
                 const hub = deliveryType === 'desk' ? document.getElementById('hub-select').value : '';
-                const address = deliveryType === 'home' ? document.getElementById('address').value.trim() : '';
+                const address = deliveryType === 'home' ? document.getElementById('address').value.trim() : hub;
 
                 // Get plaque details
                 let yourName = document.getElementById('yourName').value.trim();
@@ -945,7 +963,7 @@
                     price: productPrice,
                     shipping: 0, // You can calculate shipping if needed
                     total: productPrice,
-                    color: plaqueOwnerName, // Send plaque owner name instead of color
+                    color: designArabic, // Send Gold/White/Black
                     quantity: birthDate, // Send birth date in quantity column as requested
                     product: `${plaqueTypeArabic} - ${designArabic}`, // Remove "لوحة تذكارية"
                     status: 'قيد المعالجة',
@@ -957,7 +975,37 @@
                     relationship: relationship
                 };
 
-                // Send to Google Sheet
+                // Prepare data for Firestore (Primary)
+                const firestoreData = {
+                    customerName: yourName || plaqueOwnerName,
+                    phoneNumber: formattedPhone,
+                    deliveryType: deliveryType === 'desk' ? 'OUI' : 'NON',
+                    wilaya: wilaya,
+                    baladiya: baladiya,
+                    hub: hub,
+                    address: address,
+                    price: productPrice,
+                    shippingPrice: 0,
+                    total: productPrice,
+                    color: designArabic, // Store Gold/White/Black
+                    quantity: 1,
+                    productName: `${plaqueTypeArabic} - ${designArabic}`,
+                    status: 'new',
+                    deliveryStatus: 'لم يجهز',
+                    source: 'صفحة اللوحة التذكارية (Mama)',
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    // Custom fields for this landing page
+                    customFieldL: birthDate,
+                    customFieldM: deliveryArabic,
+                    customFieldK: relationship,
+                    plaqueType: plaqueTypeArabic,
+                    plaqueOwnerName: plaqueOwnerName
+                };
+
+                // Send to Firestore
+                const firestorePromise = db.collection('mama').add(firestoreData);
+
+                // Send to Google Sheet (Backup)
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -968,6 +1016,11 @@
                 }).then(() => {
                     console.log('Sent to Google Sheet');
                 }).catch(err => console.error('Error sending to sheet', err));
+
+                // Wait for Firestore to complete
+                firestorePromise.then(() => {
+                    console.log('Order saved to Firestore successfully');
+                }).catch(err => console.error('Error saving to Firestore', err));
 
                 // WhatsApp Message
                 setTimeout(() => {
@@ -1059,7 +1112,6 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
         </div>
     </div>
 
-    </script>
     <!-- Special Offer Modal Form -->
     <div id="offerModal" class="offer-modal">
         <div class="offer-modal-content">
@@ -1284,7 +1336,7 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
             const deliveryType = document.querySelector('input[name="offerDelivery"]:checked').value;
             const baladiya = deliveryType === 'home' ? document.getElementById('offerBaladiya').value : '';
             const hub = deliveryType === 'desk' ? document.getElementById('offerHub').value : '';
-            const address = deliveryType === 'home' ? document.getElementById('offerAddress').value : '';
+            const address = deliveryType === 'home' ? document.getElementById('offerAddress').value : hub;
 
             // Translate Values
             const momDesignAr = momDesign === 'gold' ? 'الذهبي' : (momDesign === 'black' ? 'الأسود' : 'الأبيض');
@@ -1309,7 +1361,7 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
                 plaqueType: 'عرض خاص',
                 plaqueOwnerName: `الأم: ${momName} | الأب: ${dadName}`,
                 birthDate: `الأم: ${momBirth} | الأب: ${dadBirth}`,
-                relationship: 'special_offer'
+                relationship: 'عرض خاص (أمي وأبي)'
             };
 
             fetch(GOOGLE_SCRIPT_URL, {
@@ -1318,14 +1370,42 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             }).then(() => {
-                alert('تم استلام طلبكم للعرض الخاص بنجاح! سنتصل تواصل بكم قريباً.');
+                console.log('Offer sent to Google Sheet');
+            }).catch(err => console.error(err));
+
+            // Send to Firestore (Primary)
+            const firestoreData = {
+                customerName: name,
+                phoneNumber: formData.phone,
+                deliveryType: formData.delivery,
+                wilaya: wilaya,
+                baladiya: baladiya,
+                hub: hub,
+                address: address,
+                price: 4000,
+                total: 4000,
+                color: formData.color,
+                quantity: 1,
+                productName: formData.product,
+                status: 'new',
+                deliveryStatus: 'لم يجهز',
+                source: 'عرض 4000 دج (Mama)',
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                customFieldL: formData.quantity, // Contains birth dates
+                customFieldM: deliveryType === 'home' ? 'منزل' : 'مكتب',
+                plaqueType: 'عرض خاص',
+                plaqueOwnerName: `الأم: ${momName} | الأب: ${dadName}`
+            };
+
+            db.collection('mama').add(firestoreData).then(() => {
+                alert('تم استلام طلبكم للعرض الخاص بنجاح! سنتواصل معكم قريباً.');
                 closeOfferModal();
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 document.getElementById('offerForm').reset();
             }).catch(err => {
                 console.error(err);
-                alert('حدث خطأ، يرجى المحاولة مرة أخرى');
+                alert('حدث خطأ أثناء حفظ الطلب في قاعدة البيانات');
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             });
