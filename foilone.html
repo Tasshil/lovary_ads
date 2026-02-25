@@ -8,8 +8,6 @@
 
 
     <!-- Meta Pixel Code -->
-
-    <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
@@ -22,15 +20,14 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '939027478454511');
+        fbq('init', '1530558284759971');
         fbq('track', 'PageView');
     </script>
-
-
     <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=939027478454511&ev=PageView&noscript=1" /></noscript>
+            src="https://www.facebook.com/tr?id=1530558284759971&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
-    <meta name="facebook-domain-verification" content="xdienmepcs2jv8q2diqnw8btdn7kke" />
+    <meta name="facebook-domain-verification" content="tq92ueq9gylq5mf5f5b95tp3k36gc4" />
+
     <title>Store in your House - فويل ون فاخر</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -405,10 +402,7 @@
                                 data-type="dad">
                                 أبي
                             </div>
-                            <div class="plaque-type-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
-                                data-type="custom">
-                                تخصيص
-                            </div>
+
                         </div>
                     </div>
 
@@ -539,7 +533,7 @@
 
                     <button type="submit"
                         class="submit-btn w-full p-6 text-2xl bg-gradient-to-br from-accent to-lightAccent text-white border-none rounded-2xl cursor-pointer font-bold mt-8 transition-all duration-400 shadow-[0_12px_35px_rgba(139,111,71,0.4)] hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(139,111,71,0.6)]">✓
-                         أطلبه الأن</button>
+                        تأكيد الطلب</button>
                 </form>
             </div>
         </section>
@@ -807,7 +801,7 @@
                 };
 
                 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJ3sM27Dz25VwQyM-QldYPbv4-_y5wrX4kZcIYrSAdSSOJ6r0DsvfFqQ5K2Mkcthe9/exec';
-                const firestorePromise = foilDb.collection('mom_foil').add(firestoreData);
+                const firestorePromise = foilDb.collection('mama').add(firestoreData);
 
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST', mode: 'no-cors',
@@ -967,7 +961,7 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
 
                 <button type="submit" id="foilOfferSubmitBtn"
                     class="w-full bg-gradient-to-br from-accent to-lightAccent text-white font-bold py-4 rounded-xl text-xl shadow-lg transform transition hover:-translate-y-1 hover:shadow-2xl">
-                    أطلب عرض 5000دج
+                    تأكيد الطلب - 5000 دج
                 </button>
             </form>
         </div>
@@ -1123,7 +1117,7 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
                 plaqueOwnerName: `الأم: ${momName} | الأب: ${dadName}`
             };
 
-            foilDb.collection('mom_foil').add(firestoreData).then(() => {
+            foilDb.collection('mama').add(firestoreData).then(() => {
                 alert('تم استلام طلبكم للعرض الخاص بنجاح! سنتواصل معكم قريباً.');
                 closeFoilOfferModal();
                 btn.innerHTML = originalText;
@@ -1144,4 +1138,3 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
 </body>
 
 </html>
-
