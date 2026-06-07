@@ -476,8 +476,8 @@
                     <input type="text" id="address" placeholder="أدخل العنوان الكامل"
                         class="w-full p-4 border-2 border-[#C9CCD3] rounded-xl text-base transition-all duration-300 font-inherit bg-white text-dark focus:outline-none focus:border-gold focus:shadow-[0_0_0_4px_rgba(212,175,55,0.15)] focus:bg-[#F7F9FC]">
                 </div>
-                <button type="submit"
-                    class="submit-btn w-full p-6 text-2xl bg-gradient-to-br from-gold to-lightGold text-dark border-none rounded-2xl cursor-pointer font-bold mt-8 transition-all duration-400 shadow-[0_12px_35px_rgba(212,175,55,0.4)] hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(212,175,55,0.6)] hover:bg-gradient-to-br hover:from-lightGold hover:to-gold">✓
+                <button type="submit" id="submitBtn" disabled
+                    class="submit-btn w-full p-6 text-2xl bg-gradient-to-br from-gold to-lightGold text-dark border-none rounded-2xl cursor-pointer font-bold mt-8 transition-all duration-400 shadow-[0_12px_35px_rgba(212,175,55,0.4)] hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(212,175,55,0.6)] hover:bg-gradient-to-br hover:from-lightGold hover:to-gold disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none disabled:bg-gray-400 disabled:from-gray-300 disabled:to-gray-400">✓
                     تأكيد الطلب</button>
             </form>
         </div>
@@ -725,8 +725,52 @@
                     this.classList.add('selected');
                     selectedColor = this.dataset.color;
                     productPrice = parseInt(this.dataset.price);
+                    checkFormValidity();
                 });
             });
+
+            // Form validation logic
+            function checkFormValidity() {
+                const phone = document.getElementById('phone').value.trim();
+                const husbandName = document.getElementById('husbandName').value.trim();
+                const wifeName = document.getElementById('wifeName').value.trim();
+                const marriageDay = document.getElementById('marriageDay').value;
+                const marriageMonth = document.getElementById('marriageMonth').value;
+                const marriageYear = document.getElementById('marriageYear').value;
+                const wilayaSelectVal = wilayaSelect.value;
+                
+                const selectedRadio = document.querySelector('input[name="delivery"]:checked');
+                const selectedType = selectedRadio ? selectedRadio.value : null;
+
+                let locationValid = false;
+                if (selectedType === 'home') {
+                    const baladiya = baladiyaSelect.value;
+                    const address = document.getElementById('address').value.trim();
+                    locationValid = (baladiya !== '' && address !== '');
+                } else if (selectedType === 'desk') {
+                    const hub = hubSelect.value;
+                    locationValid = (hub !== '');
+                }
+
+                const isValid = phone !== '' && phone.length >= 9 && husbandName !== '' && wifeName !== '' &&
+                                marriageDay !== '' && marriageMonth !== '' && marriageYear !== '' &&
+                                wilayaSelectVal !== '' && selectedColor !== null && locationValid;
+
+                const submitBtn = document.getElementById('submitBtn');
+                if (submitBtn) {
+                    submitBtn.disabled = !isValid;
+                }
+            }
+
+            // Attach event listeners to all inputs to trigger validation
+            const inputs = document.querySelectorAll('#orderForm input, #orderForm select');
+            inputs.forEach(input => {
+                input.addEventListener('input', checkFormValidity);
+                input.addEventListener('change', checkFormValidity);
+            });
+            
+            // Initial check
+            checkFormValidity();
         });
 
         // Form submission
