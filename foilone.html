@@ -463,7 +463,7 @@
 
                     <div class="form-group mb-6">
                         <label class="block mb-2.5 text-lg text-primary font-semibold">اختر التصميم *</label>
-                        <div class="design-options grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="design-options grid grid-cols-2 gap-4">
                             <div class="design-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
                                 data-design="gold" data-price="2900">
                                 الذهبي<br>2900 دج
@@ -471,10 +471,6 @@
                             <div class="design-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
                                 data-design="black" data-price="2900">
                                 الأسود<br>2900 دج
-                            </div>
-                            <div class="design-option p-4 border-[3px] border-[#C9CCD3] rounded-xl text-center cursor-pointer transition-all duration-300 font-semibold bg-white text-primary hover:border-accent hover:scale-105 hover:shadow-[0_8px_25px_rgba(139,111,71,0.2)] [&.selected]:border-accent [&.selected]:bg-gradient-to-br [&.selected]:from-cream [&.selected]:to-white [&.selected]:shadow-[0_8px_25px_rgba(139,111,71,0.3)] [&.selected]:text-accent"
-                                data-design="white" data-price="2900">
-                                الأبيض<br>2900 دج
                             </div>
                         </div>
                     </div>
@@ -911,14 +907,12 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
                         <option value="">تصميم الأم *</option>
                         <option value="gold">الذهبي</option>
                         <option value="black">الأسود</option>
-                        <option value="white">الأبيض</option>
                     </select>
                     <select id="foilOfferDadDesign" required
                         class="w-full p-3 border-2 border-[#C9CCD3] rounded-xl text-base focus:outline-none focus:border-accent">
                         <option value="">تصميم الأب *</option>
                         <option value="gold">الذهبي</option>
                         <option value="black">الأسود</option>
-                        <option value="white">الأبيض</option>
                     </select>
                 </div>
 
