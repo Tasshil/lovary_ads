@@ -802,6 +802,15 @@
                 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJ3sM27Dz25VwQyM-QldYPbv4-_y5wrX4kZcIYrSAdSSOJ6r0DsvfFqQ5K2Mkcthe9/exec';
                 const firestorePromise = foilDb.collection('mama').add(firestoreData);
 
+                // Meta Pixel Purchase Event
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Purchase', {
+                        value: productPrice,
+                        currency: 'DZD',
+                        content_name: `${plaqueTypeArabic} - ${designArabic}`
+                    });
+                }
+
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST', mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
@@ -1093,6 +1102,16 @@ ${address ? `🏠 *العنوان:* ${address}` : ''}
             };
 
             const FOIL_GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJ3sM27Dz25VwQyM-QldYPbv4-_y5wrX4kZcIYrSAdSSOJ6r0DsvfFqQ5K2Mkcthe9/exec';
+            
+            // Meta Pixel Purchase Event
+            if (typeof fbq === 'function') {
+                fbq('track', 'Purchase', {
+                    value: 5000,
+                    currency: 'DZD',
+                    content_name: 'عرض شهادتين - أمي وأبي'
+                });
+            }
+
             fetch(FOIL_GOOGLE_SCRIPT_URL, {
                 method: 'POST', mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
